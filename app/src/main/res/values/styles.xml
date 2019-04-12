@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppCustomToolbarTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Ex_5_1_ImageButtons">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:color">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="Ex_5_1_ImageButtons.Plus" parent="Ex_5_1_ImageButtons">
+        <item name="android:src">@drawable/ic_plus</item>
+
+    </style>
+
+    <style name="Ex_5_1_ImageButtons.Minus" parent="Ex_5_1_ImageButtons">
+        <item name="android:src">@drawable/ic_minus</item>
+    </style>
+
+    <style name="Ex_5_1_TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">35dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
+    </style>
+
+    <style name="Ex_5_1_TeamText" parent="Ex_5_1_TextView">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display1</item>
+    </style>
+
+</resources>

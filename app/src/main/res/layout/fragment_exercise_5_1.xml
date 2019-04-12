@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lesson5.Exercise_5_1"
+    >
+
+
+    <ImageButton
+        android:id="@+id/plusButton2"
+        style="@style/Ex_5_1_ImageButtons.Plus"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/countView2"
+        android:text="0"
+        style="@style/Ex_5_1_TextView"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/plusButton2"
+        app:layout_constraintStart_toEndOf="@+id/minusButton2"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:text="Team2"
+        style="@style/Ex_5_1_TeamText"
+
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countView1" />
+
+    <ImageButton
+        android:id="@+id/minusButton2"
+        style="@style/Ex_5_1_ImageButtons.Minus"
+
+
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/countView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="Team1"
+        style="@style/Ex_5_1_TeamText"
+
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/minusButton1"
+        style="@style/Ex_5_1_ImageButtons.Minus"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/countView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/plusButton1"
+        style="@style/Ex_5_1_ImageButtons.Plus"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countView1"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/countView1"
+        android:text="0"
+        style="@style/Ex_5_1_TextView"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/plusButton1"
+        app:layout_constraintStart_toEndOf="@+id/minusButton1"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</android.support.constraint.ConstraintLayout>

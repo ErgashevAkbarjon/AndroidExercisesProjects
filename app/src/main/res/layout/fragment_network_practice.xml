@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lesson5.Network_practice"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/urlEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Write url"
+                android:text="192.168.43.246/anettest"
+                />
+            <Button
+                android:id="@+id/sendRequestButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send request"
+                />
+            <TextView
+                android:id="@+id/responseView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sdksndclsk"
+                android:textSize="30sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

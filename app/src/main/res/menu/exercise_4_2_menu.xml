@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="1 Item"
+          android:id="@+id/firstItem"/>
+    <item android:title="2 Item"
+        android:id="@+id/secondItem" />
+    <item android:title=""
+        android:id="@+id/thirdItem"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/example_icon"/>
+</menu>
