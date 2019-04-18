@@ -83,6 +83,13 @@ public class LessonActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        boolean hadSwaped = exerciseFragmentPagerAdapter.swapFragmentBack();
+
+        if(!hadSwaped) super.onBackPressed();
+    }
+
     public void swapCurrentFragmentTo(ExerciseFragment newFragment, int currentPosition){
         if(exerciseFragmentPagerAdapter == null) return;
 
