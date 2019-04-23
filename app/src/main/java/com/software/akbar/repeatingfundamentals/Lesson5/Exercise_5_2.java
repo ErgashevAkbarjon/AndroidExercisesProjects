@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.software.akbar.repeatingfundamentals.ExerciseFragment;
-import com.software.akbar.repeatingfundamentals.Lesson1.Exercise_1_1;
 import com.software.akbar.repeatingfundamentals.LessonActivity;
 import com.software.akbar.repeatingfundamentals.R;
 
@@ -90,7 +89,7 @@ public class Exercise_5_2 extends ExerciseFragment {
         SportsDetail sportsDetailFragment = new SportsDetail();
 
         sportsDetailFragment.setNews(sport.getNews());
-        sportsDetailFragment.setNewsPhoto(sport.getImage());
+        sportsDetailFragment.setNewsPhotoRes(sport.getImage());
 
         hostActivity.swapCurrentFragmentTo(sportsDetailFragment, thisFragmentPosition);
     }
@@ -98,12 +97,12 @@ public class Exercise_5_2 extends ExerciseFragment {
     private ArrayList<Sport> getSports() {
         ArrayList<Sport> sports = new ArrayList<>();
 
-        sports.add(new Sport(getActivity(),"Basketball", "Here is some news!", R.drawable.img_basketball));
-        sports.add(new Sport(getActivity(),"Football", "Here is some news!", R.drawable.img_soccer));
-        sports.add(new Sport(getActivity(),"Cycling", "Here is some news!", R.drawable.img_cycling));
-        sports.add(new Sport(getActivity(),"Badminton", "Here is some news!", R.drawable.img_badminton));
+        sports.add(new Sport(getActivity(),"Basketball", "Here is some Basketball news!", R.drawable.img_basketball));
+        sports.add(new Sport(getActivity(),"Football", "Here is some Football news!", R.drawable.img_soccer));
+        sports.add(new Sport(getActivity(),"Cycling", "Here is Cycling  news!", R.drawable.img_cycling));
+        sports.add(new Sport(getActivity(),"Badminton", "Here is Badminton news!", R.drawable.img_badminton));
         sports.add(new Sport(getActivity(),"Bowling", "Here is some news!", R.drawable.img_bowling));
-        sports.add(new Sport(getActivity(),"Baseball", "Here is some news!", R.drawable.img_baseball));
+        sports.add(new Sport(getActivity(),"Baseball", "Here is Baseball news!", R.drawable.img_baseball));
         sports.add(new Sport(getActivity(),"Golf", "Here is some news!", R.drawable.img_golf));
         sports.add(new Sport(getActivity(),"Running", "Here is some news!", R.drawable.img_running));
         sports.add(new Sport(getActivity(),"Swimming", "Here is some news!", R.drawable.img_swimming));

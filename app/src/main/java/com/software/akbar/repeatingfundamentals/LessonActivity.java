@@ -96,10 +96,6 @@ public class LessonActivity extends AppCompatActivity {
         exerciseFragmentPagerAdapter.swapFragment(newFragment, currentPosition);
     }
 
-    public void swapBackCurrentFragment(){
-        exerciseFragmentPagerAdapter.swapFragmentBack();
-    }
-
     public void setCurrentTab(int tabPosition){
         viewPager.setCurrentItem(tabPosition);
     }

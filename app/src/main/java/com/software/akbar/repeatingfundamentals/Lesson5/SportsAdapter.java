@@ -74,7 +74,7 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.Holder> {
         public void bindTo(Sport currentSport) {
             sportNameView.setText(currentSport.getName());
             sportNewsView.setText(currentSport.getNews());
-            sportImageView.setImageBitmap(currentSport.getImage());
+            Glide.with(mContext).load(currentSport.getImage()).into(sportImageView);
 
             if(mOnSportClickListener == null) return;
 

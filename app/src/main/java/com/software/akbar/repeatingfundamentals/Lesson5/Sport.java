@@ -10,31 +10,31 @@ import android.util.DisplayMetrics;
 public class Sport {
     private String mName;
     private String mNews;
-    private Bitmap mImage;
+    private int mImageRes;
 
     public Sport(Context context, String name, String news, int imgResource){
         this.mName = name;
         this.mNews = news;
 
-        this.mImage = this.drawableToBitmap(context.getResources(), imgResource);
+        this.mImageRes = imgResource;
     }
 
-    private Bitmap drawableToBitmap(Resources contextResources, int resId) {
+    public static Bitmap drawableToBitmap(Resources contextResources, int resId) {
 
         Bitmap bitmap = BitmapFactory.decodeResource(contextResources, resId);
 
-        bitmap = this.resizeBitmap(bitmap, getDisplayWidth(contextResources));
+        bitmap = resizeBitmap(bitmap, getDisplayWidth(contextResources));
 
         return bitmap;
     }
 
-    private int getDisplayWidth(Resources resources) {
+    private static int getDisplayWidth(Resources resources) {
 
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         return displayMetrics.widthPixels;
     }
 
-    private Bitmap resizeBitmap(Bitmap bitmap, int width) {
+    private static Bitmap resizeBitmap(Bitmap bitmap, int width) {
 
         float factor = width / (float) bitmap.getWidth();
 
@@ -51,7 +51,7 @@ public class Sport {
         return mNews;
     }
 
-    public Bitmap getImage() {
-        return mImage;
+    public int getImage() {
+        return this.mImageRes;
     }
 }
