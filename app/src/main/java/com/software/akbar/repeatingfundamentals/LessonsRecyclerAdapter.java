@@ -7,14 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class LessonsRecyclerAdapter extends RecyclerView.Adapter<LessonsRecyclerAdapter.ViewHolder> {
 
-    private String[] mLessons;
+public class LessonsRecyclerAdapter extends RecyclerView.Adapter<LessonsRecyclerAdapter.LessonHolder> {
 
-    private OnLessonClickListener mOnLessonClickListener = null;
+    String[] mLessons;
 
-    interface OnLessonClickListener{
-        void OnLessonClick(int position);
+    OnLessonClickListener mOnLessonClickListener;
+
+    interface OnLessonClickListener {
+        void onLessonClick(int position);
     }
 
     public LessonsRecyclerAdapter(String[] lessons){
@@ -27,28 +28,16 @@ public class LessonsRecyclerAdapter extends RecyclerView.Adapter<LessonsRecycler
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.exercise_recycle_layout, viewGroup, false);
-        return new ViewHolder(view);
+    public LessonHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.exercise_recycle_layout, viewGroup, true);
+
+        return new LessonHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
-        String currentLesson = mLessons[i];
-
-        viewHolder.lessonView.setText(currentLesson);
-
-        if(this.mOnLessonClickListener == null) return;
-
-        final int position = i;
-
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnLessonClickListener.OnLessonClick(position);
-            }
-        });
+    public void onBindViewHolder(@NonNull LessonHolder lessonHolder, int i) {
+        lessonHolder.bind(i);
     }
 
     @Override
@@ -56,16 +45,21 @@ public class LessonsRecyclerAdapter extends RecyclerView.Adapter<LessonsRecycler
         return mLessons.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class LessonHolder extends RecyclerView.ViewHolder {
 
-        TextView lessonView;
+        TextView mLessonTextView;
 
-        public ViewHolder(@NonNull View itemView) {
+        public LessonHolder(@NonNull View itemView) {
             super(itemView);
-            lessonView = itemView.findViewById(R.id.exerciseRecyclerText);
+            mLessonTextView = itemView.findViewById(R.id.exerciseRecyclerText);
+        }
+
+        public void bind(int lessonPosition) {
+            this.mLessonTextView.setText(mLessons[lessonPosition]);
+
+            if(mOnLessonClickListener == null) return;
+
+            this.itemView.setOnClickListener(v -> mOnLessonClickListener.onLessonClick(lessonPosition));
         }
     }
-
-
-
 }

@@ -28,16 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
         LessonsRecyclerAdapter lessonsRecyclerAdapter = new LessonsRecyclerAdapter(mExercises);
 
-        lessonsRecyclerAdapter.setOnLessonClickListener(this::onExerciseItemClick);
+        lessonsRecyclerAdapter.setOnLessonClickListener(this::onLessonClick);
 
         lessonsRecycler.setAdapter(lessonsRecyclerAdapter);
 
-        lessonsRecycler.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    void onExerciseItemClick(int position){
-
-        switch (position){
+    private void onLessonClick(int lessonPosition) {
+        switch (lessonPosition){
             case 0:
                 startLessonActivity(LessonActivity.LESSON1);
                 break;
@@ -55,14 +53,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void startLessonActivity(int lessonNumber) {
 
-        //Is lessonNumber is one of pre defined constants, if not it will generate error
-        boolean isLessonConstant = lessonNumber >= LessonActivity.LESSON1 && lessonNumber <= LessonActivity.LESSON12;
-        assert  isLessonConstant; //doesn't work
+        boolean isValidLessonNumber = lessonNumber >= LessonActivity.LESSON1 && lessonNumber <= LessonActivity.LESSON12;
 
-        Intent activityIntent = new Intent(this, LessonActivity.class);
-        activityIntent.putExtra(LESSON_NUMBER, lessonNumber);
+        if(!isValidLessonNumber) return;
 
-        startActivity(activityIntent);
+        Intent lessonActivityIntent = new Intent(this, LessonActivity.class);
+        lessonActivityIntent.putExtra(LESSON_NUMBER, lessonNumber);
+
+        startActivity(lessonActivityIntent);
     }
+
 
 }
